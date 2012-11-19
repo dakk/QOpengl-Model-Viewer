@@ -116,6 +116,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     QSignalMapper *signalMapper = new QSignalMapper(this);
     signalMapper->setMapping(pyramidAction, OT_PYRAMID);
 
+    /* Non compilo le funzioni che usano glut per problemi di compilazione con opengles */
 #ifndef QT_OPENGL_ES
     signalMapper->setMapping(cubeAction, OT_CUBE);
     signalMapper->setMapping(teapotAction, OT_TEAPOT);
